@@ -3,58 +3,18 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
 
+<div class="example-wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
-<main>
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="overlay-image" style="background-image: url('images/carroussel.jpg');" aria-hidden="true">
-      </div>
-      <div class="carousel-item active">
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <img class="logo-simplifie" src="{{ asset('images/TIBAG_logo_simplifie.png')}}" alt="Tibag" />
-            <p class="text-carousel">Tbag est une entreprise de maroquinerie responsable</p>
-            <p class="text-carousel">Fabrication 100% française</p>
-            <p><a class="btn btn-lg btn-primary" href="/a-propos">Voir plus</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-home">
-    <div class="block-content-home">
-      <h2 class="titre-block-content-home">Voyage au cœur de la maroquinerie</h2>
-      <div class="text-homme">
-        <p>John Doe crée un atelier de maroquinerie à Amiens en 2023</p>
-        <p>L'atelier rassemble plus 15 artisants, donne vie a de nouvelles lignes de maroquinerie.</p>
-        <p>Avec des matières nobles, durables et locales.</p>
-      </div>
-    </div>
-    <div class="image-content-home">
-      <img class="picture-block-home" src="{{ asset('images/sac_home_page.jpg')}}" alt="symfony" />
-    </div>
-  </div>
-    </div>
-  <div class="selection_produits">
-  <div class="container">
-  <div class="row">
-
-    {% for bag in bags %}
-    <div class="col-md-4">
-    <div class="card">
-      <img class="card-img-top" src=" {{ asset('images/'~bag.image) }}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{ bag.title }}</h5>
-        <p class="card-text">{{ bag.text }}</p>
-        <a href="{{ path('app_a_propos') }}" class="btn btn-primary">Voir plus</a>
-      </div>
-    </div>
-    </div>
-    {% endfor %}
-  </div>
-  </div>
-  </div>
-</main>
-
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/var/www/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/var/www/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
+    </ul>
+</div>
 {% endblock %}
