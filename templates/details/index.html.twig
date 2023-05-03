@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DetailsController!{% endblock %}
+
+{% block body %}
+
+<main>
+    <img class="img-details" src="{{ vich_uploader_asset(recettes) }}" alt="{{ recettes.name }}">
+
+    <h1 class="mt-1">{{ recettes.name }}</h1>
+    <h2 class="mt-3">Description </h2>
+    <p>{{ recettes.description}}</p>
+</main>
+{% endblock %}

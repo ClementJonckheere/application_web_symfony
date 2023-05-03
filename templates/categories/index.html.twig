@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriesController!{% endblock %}
+
+{% block body %}
+
+<main>
+    {% for recette in categories.recettes %}
+        <div class="card-contener col-md-3 col-sm-6">
+            <div class="card mb-3">
+                <a href="{{ path('app_details_show', { 'id': recette.id }) }}"> 
+                    <img class="card-img-top" src="{{ vich_uploader_asset(recette)}}" alt="{{ recette.name }}">
+                </a>
+                <p>{{ recette.name}}</p>
+            </div>
+            <div class="delete d-flex">
+                <a class="btn suppr-btn" href="{{ path('app_categories_delete', { 'id': recette.id }) }}">Supprimer</a>
+            </div>
+        </div>
+    {% endfor %}
+</main>
+{% endblock %}
